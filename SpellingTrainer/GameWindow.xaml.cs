@@ -10,25 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace SpellingTrainer
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for GameWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GameWindow : Window
     {
-        public MainWindow()
+        GameClass gc;
+        public GameWindow()
         {
             InitializeComponent();
+            gc = new GameClass();
+           
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            GameWindow charSelect = new GameWindow();
-            charSelect.ShowDialog();
+        public void prepareGame(string deckLabel) {
+            gc.loadSelectedDeckFromDatabase(deckLabel);
+            gc.loadQuestionsFromDatabase(gc.deck);
         }
+        public void 
     }
 }
