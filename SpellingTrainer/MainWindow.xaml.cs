@@ -27,8 +27,19 @@ namespace SpellingTrainer
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            GameWindow charSelect = new GameWindow();
-            charSelect.ShowDialog();
+            GameSelection charSelect = new GameSelection();
+            try
+            {
+                charSelect.ShowDialog();
+            }
+            catch (Exception ex) {
+
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

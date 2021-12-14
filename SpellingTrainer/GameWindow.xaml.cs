@@ -26,10 +26,19 @@ namespace SpellingTrainer
             gc = new GameClass();
            
         }
+
+        public GameWindow(GameClass gc)
+        {
+            InitializeComponent();
+            this.gc = gc;
+        }
+
         public void prepareGame(string deckLabel) {
             gc.loadSelectedDeckFromDatabase(deckLabel);
             gc.loadQuestionsFromDatabase(gc.deck);
         }
-        public void 
+
+
+         
     }
 }

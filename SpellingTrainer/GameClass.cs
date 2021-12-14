@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using SpellingTrainer.ExcelClasses;
 
 namespace SpellingTrainer
 {
     public class GameClass
     {
-        public List<string> questions { get; set; }
-        public List<string> answers { get; set; }
+        public Dictionary<string,string> exercises = new Dictionary<string,string>();
+        public DataTable exercisesDataTable = new DataTable();
         public Deck deck { get; set; }
         public string currentTestString;
         public string currentSolution;
@@ -30,6 +32,7 @@ namespace SpellingTrainer
 
         }
 
+
         public void loadQuestionsFromDatabase(Deck deckParam) {
             //load the cards from the given deck
             using (var context = new GameLibraryContext()) {
@@ -37,13 +40,35 @@ namespace SpellingTrainer
                                 .Where(b => b.deck == deckParam).ToArray();
                 foreach (Card a in result)
                 {
-                    questions.Add(a.cardLabel);
-                    questions.Add(a.cardSolutionBre);
+                    exercises.Add(a.cardLabel,a.cardSolutionBre);
                 }
             }
            
         }
+        public DataTable loadQuestionsFromExcel(string path) {
+            DataTable dt = new DataTable();
+            ExcelClasses.excelLoaderClass ex = new excelLoaderClass();
+            dt = ex.importDataFromFile(path);
 
+            Console.WriteLine("EXCEL INPUT");
+            foreach (DataRow dr in dt.Rows)
+            {
+                Console.WriteLine(dr.ItemArray.GetValue(0).ToString());
+                Console.WriteLine(dr.ItemArray.GetValue(1).ToString());
+                Console.WriteLine(dr.ItemArray.GetValue(2).ToString());
+                Console.WriteLine(dr.ItemArray.GetValue(3).ToString());
+            }
+            this.exercisesDataTable = dt;
+            return dt;
+        }
+        public DataTable loadQuestionsFromCsv(string path)
+        {
+            DataTable dt = new DataTable();
+            dt = csvLoaderClass.loadFromCSV(path);
+            this.exercisesDataTable = dt;
+            return dt;
+
+        }
         public void checkCharacters(char c,int position) {
 
 
