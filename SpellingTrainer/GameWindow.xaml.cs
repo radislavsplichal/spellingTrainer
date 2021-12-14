@@ -31,14 +31,46 @@ namespace SpellingTrainer
         {
             InitializeComponent();
             this.gc = gc;
+            this.gc.loadNextWord();
+            solutionArea.Focus();
+            taskLabel.Content = gc.currentTestString;
+            
+
         }
 
         public void prepareGame(string deckLabel) {
             gc.loadSelectedDeckFromDatabase(deckLabel);
             gc.loadQuestionsFromDatabase(gc.deck);
         }
+        public void setExercise() {
+            solutionArea.Clear();
+            solutionArea.Focus();
+            taskLabel.Content = gc.currentTestString;
+            
+        }
 
-
-         
+        private void SolutionArea_KeyUp(object sender, KeyEventArgs e)
+        {
+            var a = e.Key.ToString();
+            a = a.ToLower();
+            var b = a[0];
+            Console.WriteLine(b);
+            gc.checkCharacters(b);
+            
+            if (gc.lastAnswer == true) {
+                solutionArea.Background = Brushes.LightGreen;
+                solutionCheck.Content = solutionArea.Text;
+                if (gc.changeCard == true) {
+                    setExercise();
+                    gc.changeCard = false;
+                }
+            }
+            else
+            {
+                solutionArea.Background = Brushes.Red;
+                solutionArea.Text = gc.rmChar(solutionArea.Text);
+            }
+            Console.WriteLine("Current Deck Possition " + gc.curDeckPosition +"/"+gc.curDeckSize);
+        }
     }
 }
