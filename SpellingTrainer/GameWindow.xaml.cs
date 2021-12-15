@@ -51,9 +51,29 @@ namespace SpellingTrainer
 
         private void SolutionArea_KeyUp(object sender, KeyEventArgs e)
         {
-            var a = e.Key.ToString();
-            a = a.ToLower();
-            var b = a[0];
+            var a = "";
+            var b = (char)42;
+
+            switch (e.Key)
+            {
+                case Key.OemMinus:
+                    b = (char)45;
+                    break;
+                case Key.OemQuotes:
+                    b = (char)39;
+                    break;
+                case Key.Back:
+                    return;
+                    break;
+                default:
+                    a = e.Key.ToString();
+                    a = a.ToLower();
+                    b = a[0];
+                    break;
+            }
+            Console.WriteLine(a);
+            
+            
             Console.WriteLine(b);
             gc.checkCharacters(b);
             
@@ -71,6 +91,7 @@ namespace SpellingTrainer
                 solutionArea.Text = gc.rmChar(solutionArea.Text);
             }
             Console.WriteLine("Current Deck Possition " + gc.curDeckPosition +"/"+gc.curDeckSize);
+            scoreCounter.Content = gc.score.ToString();
         }
     }
 }

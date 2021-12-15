@@ -15,6 +15,7 @@ namespace SpellingTrainer
             this.curCharPosition = 0;
             this.curDeckPosition = 0;
             this.changeCard = false;
+            this.score = 0;
         }
         //Properties
         public Dictionary<string,string> exercises = new Dictionary<string,string>();
@@ -29,6 +30,7 @@ namespace SpellingTrainer
         public Boolean lastAnswer;
         public Boolean changeCard;
         public Boolean gameEnd;
+        public int score;
         //Methods
         public void loadSelectedDeckFromDatabase(string deckLabel) {
             //load the deck number to the game
@@ -105,6 +107,7 @@ namespace SpellingTrainer
             if (c == (char)currentSolution[p])
             {
                 lastAnswer = true;
+                score = score + 10;
                 if (this.curCharPosition == currentSolution.Length - 1)
                 {
                     this.curCharPosition = 0;
@@ -120,6 +123,7 @@ namespace SpellingTrainer
             }
             else
             {
+                score = score - 5;
                 lastAnswer = false;
             }
 
