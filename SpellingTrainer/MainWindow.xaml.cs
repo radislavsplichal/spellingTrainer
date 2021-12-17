@@ -39,7 +39,7 @@ namespace SpellingTrainer
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

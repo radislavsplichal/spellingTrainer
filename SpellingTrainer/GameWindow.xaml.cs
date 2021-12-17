@@ -92,6 +92,10 @@ namespace SpellingTrainer
             }
             Console.WriteLine("Current Deck Possition " + gc.curDeckPosition +"/"+gc.curDeckSize);
             scoreCounter.Content = gc.score.ToString();
+            if (gc.gameEnd == true) {
+                MessageBox.Show("Deck Completed! Your score: " + gc.score.ToString());
+                this.Close();
+            }
         }
     }
 }

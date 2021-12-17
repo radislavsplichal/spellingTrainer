@@ -85,6 +85,11 @@ namespace SpellingTrainer
 
         }
         public void loadNextWord() {
+            if (curDeckPosition == curDeckSize) {
+                gameEnd = true;
+                Console.WriteLine("Game Ended!");
+                return;
+            }
             var curRow = exercisesDataTable.Rows[curDeckPosition];
             this.currentTestString = curRow.ItemArray.GetValue(1).ToString();
             this.currentSolution = curRow.ItemArray.GetValue(2).ToString();
@@ -94,6 +99,7 @@ namespace SpellingTrainer
             }
             else {
                 gameEnd = true;
+                Console.WriteLine("Game Ended!");
             }
 
 

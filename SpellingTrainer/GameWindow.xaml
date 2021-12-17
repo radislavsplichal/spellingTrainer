@@ -12,11 +12,11 @@
             <ColumnDefinition Width="211*"/>
         </Grid.ColumnDefinitions>
         <Image HorizontalAlignment="Left" Height="122" Margin="166.62,26,0,0" VerticalAlignment="Top" Width="211" Grid.Column="1"/>
-        <Label Content="Score" HorizontalAlignment="Left" Margin="515.62,26,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Label x:Name="scoreCounter" Content="Label" HorizontalAlignment="Left" Margin="572.62,26,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBox x:Name="solutionArea" HorizontalAlignment="Left" Height="23" Margin="174.62,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"  KeyUp="SolutionArea_KeyUp"/>
+        <Label Content="Score" HorizontalAlignment="Left" Margin="475,26,0,0" VerticalAlignment="Top" Grid.Column="1" FontSize="22"/>
+        <Label x:Name="scoreCounter" Content="Label" HorizontalAlignment="Left" Margin="563,26,0,0" VerticalAlignment="Top" Grid.Column="1" FontSize="22"/>
+        <TextBox x:Name="solutionArea" HorizontalAlignment="Left" Height="59" Margin="175,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" Grid.Column="1"  KeyUp="SolutionArea_KeyUp" FontSize="22"/>
         <Label x:Name="solutionCheck" Content="spelled_characters&#xD;&#xA;" HorizontalAlignment="Left" Margin="174.62,211,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-        <Label x:Name="taskLabel" Content="t" HorizontalAlignment="Left" Margin="174.62,175,0,0" VerticalAlignment="Top" Width="158" Grid.Column="1"/>
+        <Label x:Name="taskLabel" Content="t" HorizontalAlignment="Left" Margin="175,130,0,0" VerticalAlignment="Top" Width="158" Grid.Column="1" FontSize="36"/>
         <Label x:Name="deckSelectionLabel" Content="Selected_Deck&#xD;&#xA;" HorizontalAlignment="Left" Margin="27,26,0,0" VerticalAlignment="Top"/>
 
     </Grid>
