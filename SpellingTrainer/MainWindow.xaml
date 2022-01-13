@@ -6,13 +6,18 @@
         xmlns:local="clr-namespace:SpellingTrainer"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Label Content="Spelling Trainer" HorizontalAlignment="Left" Margin="133,24,0,0" VerticalAlignment="Top" Height="113" Width="516" FontSize="72"/>
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="pastel_low_poly_design_banner_2507.jpg"/>
+        </Grid.Background>
+        <Label x:Name="heading" Content="Spelling Trainer" HorizontalAlignment="Left" Margin="198,55,0,0" VerticalAlignment="Top" Height="113" Width="443" FontSize="48" FontFamily="Segoe Script"/>
         <Button x:Name="chapterSelectionButton" Content="Chapter Selection" HorizontalAlignment="Left" Margin="315,168,0,0" VerticalAlignment="Top" Width="156" Height="50" Click="Button_Click"/>
-        <Button Content="Upload a new Chapter" HorizontalAlignment="Left" Margin="315,246,0,0" VerticalAlignment="Top" Width="156" RenderTransformOrigin="0.5,0.5" Height="50">
-
+        <Button x:Name="newChapterButton" Content="Upload a new Chapter" HorizontalAlignment="Left" Margin="315,246,0,0" VerticalAlignment="Top" Width="156" RenderTransformOrigin="0.5,0.5" Height="50">
+        
         </Button>
         <Button x:Name="exit_button" Content="Exit the Application" HorizontalAlignment="Left" Margin="312,325,0,0" VerticalAlignment="Top" Width="163" Height="50" Click="Button_Click_1"/>
+        <Label Content="Version:" HorizontalAlignment="Left" Margin="10,386,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="versionNumber" Content="" HorizontalAlignment="Left" Margin="67,386,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

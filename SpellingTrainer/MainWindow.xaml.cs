@@ -23,6 +23,8 @@ namespace SpellingTrainer
         public MainWindow()
         {
             InitializeComponent();
+            this.versionNumber.Content = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            newChapterButton.IsEnabled = false;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -30,10 +32,16 @@ namespace SpellingTrainer
             GameSelection charSelect = new GameSelection();
             try
             {
+                this.Visibility = Visibility.Hidden;
                 charSelect.ShowDialog();
+                
+                Console.WriteLine("Selection end");
+                this.Visibility = Visibility.Visible;
             }
-            catch (Exception ex) {
-
+            catch (Exception ex)
+            {
+            
+                Console.WriteLine(ex.Message.ToString());
             }
         }
 

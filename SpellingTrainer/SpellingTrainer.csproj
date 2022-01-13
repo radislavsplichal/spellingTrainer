@@ -246,6 +246,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pastel_low_poly_design_banner_2507.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="low_poly_banner_design_2203.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

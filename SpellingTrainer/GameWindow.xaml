@@ -7,17 +7,22 @@
         mc:Ignorable="d"
         Title="GameWindow" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="low_poly_banner_design_2203.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="53*"/>
-            <ColumnDefinition Width="211*"/>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="146*"/>
         </Grid.ColumnDefinitions>
-        <Image HorizontalAlignment="Left" Height="122" Margin="166.62,26,0,0" VerticalAlignment="Top" Width="211" Grid.Column="1"/>
-        <Label Content="Score" HorizontalAlignment="Left" Margin="475,26,0,0" VerticalAlignment="Top" Grid.Column="1" FontSize="22"/>
-        <Label x:Name="scoreCounter" Content="Label" HorizontalAlignment="Left" Margin="563,26,0,0" VerticalAlignment="Top" Grid.Column="1" FontSize="22"/>
-        <TextBox x:Name="solutionArea" HorizontalAlignment="Left" Height="59" Margin="175,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" Grid.Column="1"  KeyUp="SolutionArea_KeyUp" FontSize="22"/>
-        <Label x:Name="solutionCheck" Content="spelled_characters&#xD;&#xA;" HorizontalAlignment="Left" Margin="174.62,211,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-        <Label x:Name="taskLabel" Content="t" HorizontalAlignment="Left" Margin="175,130,0,0" VerticalAlignment="Top" Width="158" Grid.Column="1" FontSize="36"/>
-        <Label x:Name="deckSelectionLabel" Content="Selected_Deck&#xD;&#xA;" HorizontalAlignment="Left" Margin="27,26,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="122" Margin="167,26,0,0" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label Content="Score" HorizontalAlignment="Left" Margin="280.353,26,0,0" VerticalAlignment="Top" Grid.Column="2" FontSize="22"/>
+        <Label x:Name="scoreCounter" Content="Label" HorizontalAlignment="Left" Margin="368.353,26,0,0" VerticalAlignment="Top" Grid.Column="2" FontSize="22"/>
+        <TextBox x:Name="solutionArea" HorizontalAlignment="Left" Height="59" Margin="175,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" Grid.Column="1"  KeyUp="SolutionArea_KeyUp" FontSize="22" Grid.ColumnSpan="2"/>
+        <Label x:Name="solutionCheck" Content="" HorizontalAlignment="Left" Margin="175,209,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label x:Name="taskLabel" Content="LoremIpsum" HorizontalAlignment="Left" Margin="175,130,0,0" VerticalAlignment="Top" Width="415" Grid.Column="1" FontSize="36" Grid.ColumnSpan="2" FontFamily="Segoe Print"/>
+        <Label x:Name="deckSelectionLabel" Content="Selected Deck:&#xA;" HorizontalAlignment="Left" Margin="27,26,0,0" VerticalAlignment="Top" FontFamily="Segoe Script"/>
+        <Label x:Name="selectedDeckLabel" Content="N/A" HorizontalAlignment="Left" Margin="128,26,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" FontFamily="Segoe Script"/>
 
     </Grid>
 </Window>

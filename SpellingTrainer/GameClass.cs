@@ -31,6 +31,7 @@ namespace SpellingTrainer
         public Boolean changeCard;
         public Boolean gameEnd;
         public int score;
+        public string deckName { get; set; }
         //Methods
         public void loadSelectedDeckFromDatabase(string deckLabel) {
             //load the deck number to the game

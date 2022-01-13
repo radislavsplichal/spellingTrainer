@@ -45,6 +45,7 @@ namespace SpellingTrainer
         public void setExercise() {
             solutionArea.Clear();
             solutionArea.Focus();
+            solutionCheck.Content = "";
             taskLabel.Content = gc.currentTestString;
             
         }
@@ -79,16 +80,17 @@ namespace SpellingTrainer
             
             if (gc.lastAnswer == true) {
                 solutionArea.Background = Brushes.LightGreen;
-                solutionCheck.Content = solutionArea.Text;
+                solutionCheck.Content = solutionCheck.Content + solutionArea.Text;
                 if (gc.changeCard == true) {
                     setExercise();
                     gc.changeCard = false;
                 }
+                solutionArea.Text = "";
             }
             else
             {
                 solutionArea.Background = Brushes.Red;
-                solutionArea.Text = gc.rmChar(solutionArea.Text);
+                solutionArea.Text = "";
             }
             Console.WriteLine("Current Deck Possition " + gc.curDeckPosition +"/"+gc.curDeckSize);
             scoreCounter.Content = gc.score.ToString();
